@@ -1,14 +1,11 @@
 // src/App.tsx
-import { useState } from 'react'
-import './App.css'
+//import React from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div id="title">
-        <div>HashJing Contacts and resourses</div>
+        <div>HashJing | Contacts and resourses</div>
       </div>
 
       <main id="main-section">
