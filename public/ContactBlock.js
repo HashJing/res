@@ -979,12 +979,11 @@ var require_react = __commonJS({
 // public/ContactBlock.tsx
 var import_react = __toESM(require_react(), 1);
 var ContactBlock = () => {
-  const data = {
-    email: "datasattva@proton.me",
-    discord: "DataSattva",
-    x: ["@HashJingNFT", "@DataSattva"],
-    demo_render: "https://datasattva.github.io/hashjing/"
-  };
+  const [data, setData] = (0, import_react.useState)(null);
+  (0, import_react.useEffect)(() => {
+    fetch("https://datasattva.github.io/hashjing-res/res.json").then((res) => res.json()).then(setData).catch((err) => console.error("Failed to load contact data:", err));
+  }, []);
+  if (!data) return /* @__PURE__ */ import_react.default.createElement("p", { className: "status" }, "Loading contact block\u2026");
   return /* @__PURE__ */ import_react.default.createElement("div", { id: "main-section" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "preview-container" }, /* @__PURE__ */ import_react.default.createElement("div", { id: "preview-section" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "section-title" }, "Contacts"), /* @__PURE__ */ import_react.default.createElement("p", null, /* @__PURE__ */ import_react.default.createElement("strong", null, "Email:"), " ", /* @__PURE__ */ import_react.default.createElement("a", { href: `mailto:${data.email}` }, data.email)), /* @__PURE__ */ import_react.default.createElement("p", null, /* @__PURE__ */ import_react.default.createElement("strong", null, "Discord:"), " ", data.discord), /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("strong", null, "X (Twitter):"), /* @__PURE__ */ import_react.default.createElement("ul", null, data.x.map((x) => /* @__PURE__ */ import_react.default.createElement("li", { key: x }, x)))))), /* @__PURE__ */ import_react.default.createElement("div", { className: "preview-container" }, /* @__PURE__ */ import_react.default.createElement("div", { id: "preview-section" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "section-title" }, "Resources"), /* @__PURE__ */ import_react.default.createElement("p", null, /* @__PURE__ */ import_react.default.createElement("strong", null, "Live Demo:"), " ", /* @__PURE__ */ import_react.default.createElement("a", { href: data.demo_render, target: "_blank", rel: "noreferrer" }, data.demo_render)))));
 };
 export {
