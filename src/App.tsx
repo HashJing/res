@@ -11,16 +11,6 @@ type ContactData = {
 function App() {
   const [data, setData] = useState<ContactData | null>(null)
 
-  // Google Analytics setup
-  useEffect(() => {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
-      window.dataLayer.push(args);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-LBT8NYF4P7');
-  }, [])
-
   useEffect(() => {
     fetch('https://datasattva.github.io/hashjing-res/res.json')
       .then(res => res.json())
