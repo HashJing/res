@@ -1,9 +1,74 @@
 {
-  "email": "datasattva@proton.me",
-  "discord": "DataSattva",
-  "x": [
-    "@HashJingNFT",
-    "@DataSattva"
-  ],
-  "demo_render": "https://datasattva.github.io/hashjing-demo/"
+  "contacts": {
+    "emails": [
+      {
+        "email": "hashjing@proton.me",
+        "caption": "Email (support)",
+        "description": "Public support alias for HashJing NFT enquiries (forwards to the author)."
+      },
+      {
+        "email": "datasattva@proton.me",
+        "caption": "Email (personal)",
+        "description": "Personal inbox of the creator — use for partnerships, legal or press questions."
+      }
+    ],
+    "x": [
+      {
+        "x": "@HashJingNFT",
+        "caption": "X (HashJing-project)",
+        "description": "Official drop-focused account — mint countdowns, trait reveals, giveaways."
+      },
+      {
+        "x": "@DataSattva",
+        "caption": "X (personal)",
+        "description": "Creator’s personal profile — dev logs, generative-art threads, philosophy notes."
+      }
+    ],
+    "discord": [
+      {
+        "discord": "DataSattva",
+        "caption": "Discord (server)",
+        "description": "Main Discord server. Contains the **HashJing NFT** section with channels #welcome-hj, #pre-mint, #mint-live, #holders."
+      },
+      {
+        "discord": "https://discord.com/invite/hashjing",
+        "caption": "Discord (vanity invite)",
+        "description": "Vanity invite link for HashJing — takes you straight to the DataSattva Discord server."
+      }
+    ]
+  },
+  "resources": {
+    "HJ": [
+      {
+        "demo": "https://datasattva.github.io/hashjing-demo/",
+        "caption": "Live Demo",
+        "description": "Online generator: type any text / hash and get an instant SVG / PNG mandala."
+      },
+      {
+        "mint-testnet": "https://datasattva.github.io/hashjing-mint-testnet/",
+        "caption": "Mint Preview (Testnet)",
+        "description": "Sepolia preview — decodes tokenURI and shows how the main-net mint will look."
+      },
+      {
+        "mint-mainnet": "https://datasattva.github.io/hashjing-mint/",
+        "caption": "Mint Main-net",
+        "description": "Final mint page for the HashJing NFT collection on Ethereum main-net."
+      },
+      {
+        "github-core": "https://github.com/DataSattva/hashjing",
+        "caption": "GitHub (core)",
+        "description": "Core HashJing generator (Python / JS). MIT-licensed notebooks, docs and examples."
+      },
+      {
+        "github-nft": "https://github.com/DataSattva/hashjing-nft",
+        "caption": "GitHub (NFT contracts)",
+        "description": "Solidity contracts, Hardhat tests and deployment scripts for the on-chain collection."
+      },
+      {
+        "medium": "https://medium.com/@DataSattva",
+        "caption": "Medium blog",
+        "description": "Future home for deep-dive articles: entropy visuals, teaching guides, project updates."
+      }
+    ]
+  }
 }

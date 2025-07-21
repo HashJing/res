@@ -118,7 +118,10 @@ html { scroll-behavior: smooth; }
 /* ---------- Main Sections ---------- */
 #mandala-section,
 #features,
-#about {
+#about,
+#contacts,
+#resources
+ {
   width: 90%;
   max-width: var(--max-width);
   margin: var(--section-gap) auto;
@@ -279,7 +282,8 @@ a {
 
 /* ---------- Content Layout ---------- */
 #features-content,
-#about-content {
+#about-content,
+#contacts-content {
   padding-left: 1em;
   line-height: 1.6;
   text-align: left;
