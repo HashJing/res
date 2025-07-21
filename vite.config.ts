@@ -8,5 +8,8 @@ export default defineConfig({
     outDir: 'docs',   // ⇒ vite build → ./docs
     emptyOutDir: true
   },
-  base: '/hashjing-res/'
+  base: '/hashjing-res/',
+  server: {
+    port: 5173
+  } 
 })
