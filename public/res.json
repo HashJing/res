@@ -40,6 +40,11 @@
   "resources": {
     "HJ": [
       {
+        "whitepaper": "https://github.com/DataSattva/hashjing/blob/main/WhitePaper.ipynb",
+        "caption": "Whitepaper",
+        "description": "Full mathematical and conceptual details"
+      },
+      {
         "demo": "https://datasattva.github.io/hashjing-demo/",
         "caption": "Live Demo",
         "description": "Online generator: type any text / hash and get an instant SVG / PNG mandala."
