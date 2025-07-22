@@ -50,9 +50,21 @@
         "description": "Online generator: type any text / hash and get an instant SVG / PNG mandala."
       },
       {
-        "mint-testnet": "https://datasattva.github.io/hashjing-mint-testnet/",
-        "caption": "Mint Preview (Testnet)",
-        "description": "Sepolia preview — decodes tokenURI and shows how the main-net mint will look."
+        "github-core": "https://github.com/DataSattva/hashjing",
+        "caption": "GitHub (core)",
+        "description": "Core HashJing generator (Python / JS). MIT-licensed notebooks, docs and examples."
+      },
+      {
+        "medium": "https://medium.com/@DataSattva",
+        "caption": "Medium blog",
+        "description": "Future home for deep-dive articles: entropy visuals, teaching guides, project updates."
+      }
+    ],
+    "nft":[
+      {
+        "github-nft": "https://github.com/DataSattva/hashjing-nft",
+        "caption": "GitHub (NFT contracts)",
+        "description": "Solidity contracts, Hardhat tests and deployment scripts for the on-chain collection."
       },
       {
         "mint-mainnet": "https://datasattva.github.io/hashjing-mint/",
@@ -60,19 +72,9 @@
         "description": "Final mint page for the HashJing NFT collection on Ethereum main-net."
       },
       {
-        "github-core": "https://github.com/DataSattva/hashjing",
-        "caption": "GitHub (core)",
-        "description": "Core HashJing generator (Python / JS). MIT-licensed notebooks, docs and examples."
-      },
-      {
-        "github-nft": "https://github.com/DataSattva/hashjing-nft",
-        "caption": "GitHub (NFT contracts)",
-        "description": "Solidity contracts, Hardhat tests and deployment scripts for the on-chain collection."
-      },
-      {
-        "medium": "https://medium.com/@DataSattva",
-        "caption": "Medium blog",
-        "description": "Future home for deep-dive articles: entropy visuals, teaching guides, project updates."
+        "mint-testnet": "https://datasattva.github.io/hashjing-mint-testnet/",
+        "caption": "Mint Preview (Testnet)",
+        "description": "Sepolia preview — decodes tokenURI and shows how the main-net mint will look."
       }
     ]
   }

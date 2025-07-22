@@ -1,11 +1,4 @@
 // src/App.tsx
-//
-// Reads /public/res.json and prints every contact / resource exactly
-// as defined there.  Captions come from JSON; nothing hard-coded except
-// the section headings “Contacts” and “Resources”.  Contacts e-mails and
-// Discord entries render as <p>,  X/Twitter renders as a bullet <ul>,
-// Resources render as <p> blocks.
-//
 
 import { useEffect, useState } from "react";
 
@@ -24,11 +17,13 @@ type Contacts = {
 type ResourceItem = {
   caption: string;
   description: string;
-  /* [urlKey: string]: string */
-  [k: string]: string;
+  [k: string]: string; // urlKey -> url
 };
 
-type Resources = { HJ: ResourceItem[] };
+type Resources = {
+  HJ:  ResourceItem[];
+  nft?: ResourceItem[]; // optional new block
+};
 
 type JsonData = {
   contacts: Contacts;
@@ -39,7 +34,7 @@ export default function App() {
   const [data, setData] = useState<JsonData | null>(null);
 
   useEffect(() => {
-    fetch('https://datasattva.github.io/hashjing-res/res.json')
+    fetch("https://datasattva.github.io/hashjing-res/res.json")
     //fetch("./public/res.json")
       .then((res) => res.json())
       .then(setData)
@@ -50,15 +45,20 @@ export default function App() {
 
   const { contacts, resources } = data;
 
+  /* helper: extract the single dynamic URL key */
+  const getUrlKey = (item: ResourceItem) =>
+    Object.keys(item).find((k) => k !== "caption" && k !== "description") as
+      | string
+      | undefined;
+
   return (
     <>
       <h1 id="title">Contacts and resources</h1>
 
-      {/* ------------- CONTACTS ------------- */}
+      {/* --------- CONTACTS (unchanged) --------- */}
       <section id="contacts">
         <h2 className="section-title">Contacts</h2>
         <div id="contacts-content">
-          {/* E-mails */}
           {contacts.emails.map(({ email, caption, description }) => (
             <p key={email}>
               <strong>{caption}: </strong>
@@ -68,33 +68,27 @@ export default function App() {
             </p>
           ))}
 
-          {/* Discord entries */}
           {contacts.discord.map(({ discord, caption, description }) => (
             <p key={discord}>
               <strong>{caption}: </strong>
-              <a
-                href={`${discord.replace("@", "")}`}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href={discord} target="_blank" rel="noreferrer">
                 {discord}
-              </a>{" "}
+              </a>
               <br />
               {description}
             </p>
           ))}
 
-          {/* X / Twitter list */}
           {contacts.x.map(({ x, caption, description }) => (
             <p key={x}>
               <strong>{caption}: </strong>
               <a
-                  href={`https://x.com/${x.replace("@", "")}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {x}
-                </a>{" "}
+                href={`https://x.com/${x.replace("@", "")}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {x}
+              </a>
               <br />
               {description}
             </p>
@@ -102,14 +96,13 @@ export default function App() {
         </div>
       </section>
 
-      {/* ------------- RESOURCES ------------- */}
-      <section id="resources">
-        <h2 className="section-title">Resources</h2>
+      {/* --------- GENERAL HJ RESOURCES --------- */}
+      <section id="resources-hj">
+        <h2 className="section-title">General Resources</h2>
         <div id="contacts-content">
           {resources.HJ.map((item) => {
-            const urlKey = Object.keys(item).find(
-              (k) => k !== "caption" && k !== "description"
-            ) as string;
+            const urlKey = getUrlKey(item);
+            if (!urlKey) return null;
             const url = item[urlKey];
             return (
               <p key={urlKey}>
@@ -124,6 +117,30 @@ export default function App() {
           })}
         </div>
       </section>
+
+      {/* --------- NFT RESOURCES (new block) --------- */}
+      {resources.nft && (
+        <section id="resources-nft">
+          <h2 className="section-title">NFT Resources</h2>
+          <div id="contacts-content">
+            {resources.nft.map((item) => {
+              const urlKey = getUrlKey(item);
+              if (!urlKey) return null;
+              const url = item[urlKey];
+              return (
+                <p key={urlKey}>
+                  <strong>{item.caption}: </strong>
+                  <a href={url} target="_blank" rel="noreferrer">
+                    {url}
+                  </a>
+                  <br />
+                  {item.description}
+                </p>
+              );
+            })}
+          </div>
+        </section>
+      )}
     </>
   );
 }

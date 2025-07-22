@@ -120,7 +120,8 @@ html { scroll-behavior: smooth; }
 #features,
 #about,
 #contacts,
-#resources
+#resources-hj,
+#resources-nft
  {
   width: 90%;
   max-width: var(--max-width);
