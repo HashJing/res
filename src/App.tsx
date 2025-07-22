@@ -53,7 +53,7 @@ export default function App() {
 
   return (
     <>
-      <h1 id="title">Contacts and resources</h1>
+      <h1 id="title">Contacts and Resources</h1>
 
       {/* --------- CONTACTS (unchanged) --------- */}
       <section id="contacts">
