@@ -58,7 +58,12 @@
         "medium": "https://medium.com/@DataSattva",
         "caption": "Medium blog",
         "description": "Future home for deep-dive articles: entropy visuals, teaching guides, project updates."
-      }
+      },
+      {
+        "discussions": "https://github.com/DataSattva/hashjing/discussions",
+        "caption": "GitHub Discussions",
+        "description": "Community Q&A, announcements and support board."
+      }      
     ],
     "nft":[
       {
