@@ -40,6 +40,11 @@
   "resources": {
     "HJ": [
       {
+        "discussions": "https://github.com/DataSattva/hashjing/discussions",
+        "caption": "GitHub Discussions",
+        "description": "Community Q&A, announcements and support board."
+      },
+      {
         "whitepaper": "https://github.com/DataSattva/hashjing/blob/main/WhitePaper.ipynb",
         "caption": "Whitepaper",
         "description": "Full mathematical and conceptual details"
@@ -58,7 +63,7 @@
         "medium": "https://medium.com/@DataSattva",
         "caption": "Medium blog",
         "description": "Future home for deep-dive articles: entropy visuals, teaching guides, project updates."
-      }
+      }     
     ],
     "nft":[
       {
@@ -70,11 +75,6 @@
         "mint-mainnet": "https://datasattva.github.io/hashjing-mint/",
         "caption": "Mint Main-net",
         "description": "Final mint page for the HashJing NFT collection on Ethereum main-net."
-      },
-      {
-        "mint-testnet": "https://datasattva.github.io/hashjing-mint-testnet/",
-        "caption": "Mint Preview (Testnet)",
-        "description": "Sepolia preview — decodes tokenURI and shows how the main-net mint will look."
       }
     ]
   }
