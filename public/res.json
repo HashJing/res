@@ -70,11 +70,6 @@
         "mint-mainnet": "https://datasattva.github.io/hashjing-mint/",
         "caption": "Mint Main-net",
         "description": "Final mint page for the HashJing NFT collection on Ethereum main-net."
-      },
-      {
-        "mint-testnet": "https://datasattva.github.io/hashjing-mint-testnet/",
-        "caption": "Mint Preview (Testnet)",
-        "description": "Sepolia preview — decodes tokenURI and shows how the main-net mint will look."
       }
     ]
   }
