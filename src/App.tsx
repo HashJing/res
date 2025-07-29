@@ -53,84 +53,70 @@ export default function App() {
 
   return (
     <>
-      <h1 id="title">Contacts and Resources</h1>
+      <div
+        className="sticky top-0 z-10 w-full py-3 text-center text-3xl font-bold bg-background border-b border-gray-300"
+      >
+        Contacts and Resources
+      </div>
+      <main className="mx-auto max-w-screen-md px-4 space-y-8">
+        {/* --------- CONTACTS (unchanged) --------- */}
+        <section className="space-y-4 mt-8">
+          <h2 className="text-center text-2xl font-semibold tracking-tight">
+            Contacts
+          </h2>
+          <div className="space-y-4 text-base leading-relaxed">
+            {contacts.emails.map(({ email, caption, description }) => (
+              <p key={email}>
+                <strong>{caption}: </strong>
+                <a href={`mailto:${email}`} className="text-blue-400 underline hover:text-blue-600">{email}</a>
+                <br />
+                {description}
+              </p>
+            ))}
 
-      {/* --------- CONTACTS (unchanged) --------- */}
-      <section id="contacts">
-        <h2 className="section-title">Contacts</h2>
-        <div id="contacts-content">
-          {contacts.emails.map(({ email, caption, description }) => (
-            <p key={email}>
-              <strong>{caption}: </strong>
-              <a href={`mailto:${email}`}>{email}</a>
-              <br />
-              {description}
-            </p>
-          ))}
-
-          {contacts.discord.map(({ discord, caption, description }) => (
-            <p key={discord}>
-              <strong>{caption}: </strong>
-              <a href={discord} target="_blank" rel="noreferrer">
-                {discord}
-              </a>
-              <br />
-              {description}
-            </p>
-          ))}
-
-          {contacts.x.map(({ x, caption, description }) => (
-            <p key={x}>
-              <strong>{caption}: </strong>
-              <a
-                href={`https://x.com/${x.replace("@", "")}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {x}
-              </a>
-              <br />
-              {description}
-            </p>
-          ))}
-        </div>
-      </section>
-
-      {/* --------- GENERAL HJ RESOURCES --------- */}
-      <section id="resources-hj">
-        <h2 className="section-title">General Resources</h2>
-        <div id="contacts-content">
-          {resources.HJ.map((item) => {
-            const urlKey = getUrlKey(item);
-            if (!urlKey) return null;
-            const url = item[urlKey];
-            return (
-              <p key={urlKey}>
-                <strong>{item.caption}: </strong>
-                <a href={url} target="_blank" rel="noreferrer">
-                  {url}
+            {contacts.discord.map(({ discord, caption, description }) => (
+              <p key={discord}>
+                <strong>{caption}: </strong>
+                <a href={discord} target="_blank" rel="noreferrer" className="text-blue-400 underline hover:text-blue-600">
+                  {discord}
                 </a>
                 <br />
-                {item.description}
+                {description}
               </p>
-            );
-          })}
-        </div>
-      </section>
+            ))}
 
-      {/* --------- NFT RESOURCES (new block) --------- */}
-      {resources.nft && (
-        <section id="resources-nft">
-          <h2 className="section-title">NFT Resources</h2>
-          <div id="contacts-content">
-            {resources.nft.map((item) => {
+            {contacts.x.map(({ x, caption, description }) => (
+              <p key={x}>
+                <strong>{caption}: </strong>
+                <a
+                  href={`https://x.com/${x.replace("@", "")}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-blue-400 underline hover:text-blue-600"
+                >
+                  {x}
+                </a>
+                <br />
+                {description}
+              </p>
+            ))}
+          </div>
+        </section>
+
+        {/* --------- GENERAL HJ RESOURCES --------- */}
+        <section className="space-y-4 mt-6">
+          <h2 className="text-center text-2xl font-semibold tracking-tight">
+            General Resources
+          </h2>
+          <div className="space-y-4 text-base leading-relaxed">
+            {resources.HJ.map((item) => {
               const urlKey = getUrlKey(item);
               if (!urlKey) return null;
               const url = item[urlKey];
               return (
                 <p key={urlKey}>
                   <strong>{item.caption}: </strong>
-                  <a href={url} target="_blank" rel="noreferrer">
+                  <a href={url} target="_blank" rel="noreferrer" className="text-blue-400 underline hover:text-blue-600">
                     {url}
                   </a>
                   <br />
@@ -140,7 +126,33 @@ export default function App() {
             })}
           </div>
         </section>
-      )}
+
+        {/* --------- NFT RESOURCES (new block) --------- */}
+        {resources.nft && (
+          <section className="pb-8 space-y-4 mt-6">
+            <h2 className="text-center text-2xl font-semibold tracking-tight">
+            NFT Resources
+            </h2>
+            <div className="space-y-4 text-base leading-relaxed">
+              {resources.nft.map((item) => {
+                const urlKey = getUrlKey(item);
+                if (!urlKey) return null;
+                const url = item[urlKey];
+                return (
+                  <p key={urlKey}>
+                    <strong>{item.caption}: </strong>
+                    <a href={url} target="_blank" rel="noreferrer" className="text-blue-400 underline hover:text-blue-600">
+                      {url}
+                    </a>
+                    <br />
+                    {item.description}
+                  </p>
+                );
+              })}
+            </div>
+          </section>
+        )}
+      </main>
     </>
   );
 }
