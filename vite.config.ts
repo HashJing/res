@@ -21,6 +21,6 @@ export default defineConfig({
     emptyOutDir: true,
   },
 
-  base: '/hashjing-res/',
+  base: '/res/',
   server: { port: 5173 },
 });
