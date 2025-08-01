@@ -21,6 +21,6 @@ export default defineConfig({
     emptyOutDir: true,
   },
 
-  base: '/res/',
+  base: '/resources/',
   server: { port: 5173 },
 });

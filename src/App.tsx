@@ -34,7 +34,7 @@ export default function App() {
   const [data, setData] = useState<JsonData | null>(null);
 
   useEffect(() => {
-    fetch("https://hashjing.github.io/res/res.json")
+    fetch("https://hashjing.github.io/resources/res.json")
     //fetch("./public/res.json")
       .then((res) => res.json())
       .then(setData)
