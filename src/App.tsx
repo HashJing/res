@@ -1,6 +1,7 @@
 // src/App.tsx
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
+import { useAutoThemeClass } from './hooks/useAutoThemeClass'
 
 /* ---------- JSON type helpers ---------- */
 type Email   = { email: string;   caption: string; description: string };
@@ -32,6 +33,8 @@ type JsonData = {
 
 export default function App() {
   const [data, setData] = useState<JsonData | null>(null);
+
+  useAutoThemeClass();
 
   useEffect(() => {
     fetch("https://hashcanon.github.io/resources/res.json")
